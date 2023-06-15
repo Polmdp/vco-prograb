@@ -5,6 +5,23 @@ public class Player {
  private String nombre;
  private String color;
  private Pilot piloto;
+ private Car auto;
+
+    public Player(int cantjugadores, String nombre, String color, Pilot piloto, Car auto) {
+        this.cantjugadores = cantjugadores;
+        this.nombre = nombre;
+        this.color = color;
+        this.piloto = piloto;
+        this.auto = auto;
+    }
+
+    public Car getAuto() {
+        return auto;
+    }
+
+    public void setAuto(Car auto) {
+        this.auto = auto;
+    }
     public int getCantjugadores() {
         return cantjugadores;
     }
