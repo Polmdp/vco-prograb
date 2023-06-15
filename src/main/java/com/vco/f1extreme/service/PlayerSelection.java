@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class PlayerSelection {
-    private List<Player> players;
 
-    public PlayerSelection(List<Player> players) {
-        this.players = players;
+    private List<Player> players;
+    public PlayerSelection() {
+        this.players = new ArrayList<>();
     }
 
     public void addPlayer(Player player) {

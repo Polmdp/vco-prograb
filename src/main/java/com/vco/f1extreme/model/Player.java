@@ -9,8 +9,8 @@ public class Player {
     private Car car;
 
 
-    public Player(int playerCount, String name, String color, Pilot pilot, Car car) {
-        this.playerCount = playerCount;
+    public Player(String name, String color, Pilot pilot, Car car) {
+
         this.name = name;
         this.color = color;
         this.pilot = pilot;

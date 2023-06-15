@@ -83,17 +83,17 @@ public class Car {
 
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
-    public int perfcurves(){
-        //Determina cómo es el comportamiento del auto en las curvas
-    }
-    public int perfoverruns(){
-        //Determina cómo se desempeña el auto en aceleraciones rápidas
-        //y/o rectas prolongadas para sobrepasar a otros autos
-
-    }
-    public int reliability(){
-        //Determina qué tan confiable es el auto: A menor valor de este
-        //atributo, mayores probabilidades de que vaya a abandonar
-        //durante la carrera por desperfectos mecánicos
-    }
+//    public int perfcurves(){
+//        //Determina cómo es el comportamiento del auto en las curvas
+//    }
+//    public int perfoverruns(){
+//        //Determina cómo se desempeña el auto en aceleraciones rápidas
+//        //y/o rectas prolongadas para sobrepasar a otros autos
+//
+//    }
+//    public int reliability(){
+//        //Determina qué tan confiable es el auto: A menor valor de este
+//        //atributo, mayores probabilidades de que vaya a abandonar
+//        //durante la carrera por desperfectos mecánicos
+//    }
 }
