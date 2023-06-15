@@ -2,6 +2,22 @@ package main.java.com.vco.f1extreme.model;
 
 public class Car {
     private String color;
+    private int number;
+    private String brand;
+    private float weight;
+    private float maxspeed;
+    private float acceleration;
+    private float fuelconsumption;
+
+    public Car(String color, int number, String brand, float weight, float maxspeed, float acceleration, float fuelconsumption) {
+        this.color = color;
+        this.number = number;
+        this.brand = brand;
+        this.weight = weight;
+        this.maxspeed = maxspeed;
+        this.acceleration = acceleration;
+        this.fuelconsumption = fuelconsumption;
+    }
 
     public String getColor() {
         return color;
@@ -10,35 +26,53 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
-    private int number;{
-        public int getNumber() {
-            return number;
-        }
+
+    public int getNumber() {
+        return number;
     }
-    private String brand;{
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public String getBrand() {
-            return brand;
-        }
+        return brand;
     }
-    private float weight;{
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
     public float getWeight() {
-            return weight;
-        }
-}
-    private float maxspeed{
-        public float getMaxspeed() {
-            return maxspeed;
-        }
+        return weight;
     }
-    private float acceleration{
-        public float getAcceleration() {
-            return acceleration;
-        }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
-    private float fuelconsumption{
-        public float getFuelconsumption() {
-            return fuelconsumption;
-        }
+
+    public float getMaxspeed() {
+        return maxspeed;
+    }
+
+    public void setMaxspeed(float maxspeed) {
+        this.maxspeed = maxspeed;
+    }
+
+    public float getAcceleration() {
+        return acceleration;
+    }
+
+    public void setAcceleration(float acceleration) {
+        this.acceleration = acceleration;
+    }
+
+    public float getFuelconsumption() {
+        return fuelconsumption;
+    }
+
+    public void setFuelconsumption(float fuelconsumption) {
+        this.fuelconsumption = fuelconsumption;
     }
 
     //metodos............
