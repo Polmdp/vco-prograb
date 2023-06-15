@@ -19,16 +19,16 @@ public class PlayerSelection {
     public Player selectPlayer() {
         Scanner scanner = new Scanner(System.in);
 
-        // Print out the list of players
+
         System.out.println("Select a player:");
         for (int i = 0; i < players.size(); i++) {
             System.out.println((i + 1) + ". " + players.get(i).getName());
         }
 
-        // Get the player's choice
+
         int choice = scanner.nextInt();
 
-        // Return the selected player
+
         return players.get(choice - 1);
     }
 }

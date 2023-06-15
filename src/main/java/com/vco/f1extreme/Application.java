@@ -18,10 +18,9 @@ public class Application {
         playerSelection.addPlayer(new Player("Player 1", "Red",pilot,car));
 
 
-        // Call the selectPlayer method
+
         Player selectedPlayer = playerSelection.selectPlayer();
 
-        // Print out the selected player
         System.out.println("You selected: " + selectedPlayer.getName());
     }
 }
