@@ -1,41 +1,36 @@
 package main.java.com.vco.f1extreme.model;
 
 public class Player {
- private int cantjugadores;
- private String nombre;
- private String color;
- private Pilot piloto;
- private Car auto;
 
-    public Player(int cantjugadores, String nombre, String color, Pilot piloto, Car auto) {
-        this.cantjugadores = cantjugadores;
-        this.nombre = nombre;
+    private int playerCount;
+    private String name;
+    private String color;
+    private Pilot pilot;
+    private Car car;
+
+
+    public Player(int playerCount, String name, String color, Pilot pilot, Car car) {
+        this.playerCount = playerCount;
+        this.name = name;
         this.color = color;
-        this.piloto = piloto;
-        this.auto = auto;
+        this.pilot = pilot;
+        this.car = car;
     }
 
-    public Car getAuto() {
-        return auto;
+    public int getPlayerCount() {
+        return playerCount;
     }
 
-    public void setAuto(Car auto) {
-        this.auto = auto;
-    }
-    public int getCantjugadores() {
-        return cantjugadores;
+    public void setPlayerCount(int playerCount) {
+        this.playerCount = playerCount;
     }
 
-    public void setCantjugadores(int cantjugadores) {
-        this.cantjugadores = cantjugadores;
+    public String getName() {
+        return name;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getColor() {
@@ -46,12 +41,20 @@ public class Player {
         this.color = color;
     }
 
-    public Pilot getPiloto() {
-        return piloto;
+    public Pilot getPilot() {
+        return pilot;
     }
 
-    public void setPiloto(Pilot piloto) {
-        this.piloto = piloto;
+    public void setPilot(Pilot pilot) {
+        this.pilot = pilot;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 }
 //    Existen dos tipos de jugadores: Reales (personas) y Simulados (autogestionados por la
