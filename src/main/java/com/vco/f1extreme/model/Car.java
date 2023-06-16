@@ -76,14 +76,16 @@ public class Car {
     }
 
     //metodos............
-    public void stop(){
+    public static int stop(){
         //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 100).
+        return 0;//no devuelve nada por ahora
     }
-    public void start(){
+    public static int start(){
         //este metodo va ser para ver como acelerar el auto al arrancar la carrera(1 al 100).
+        return 0;//no devuelve nada por ahora
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
-    public int perfcurves(){
+    public static int perfcurves(){
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del piloto:...
         //tener en cuenta del circuito: tipo de curva?.
@@ -91,7 +93,7 @@ public class Car {
         ////Determina cómo es el comportamiento del auto en las curvas
         return 0;//no devuelve nada por ahora
     }
-    public int perfoverruns(){
+    public static int perfoverruns(){
         //tener en cuenta del auto :aceleracion,peso,velmax .
         //tener en cuenta del piloto:nada ya que depende solo del auto.
         //tener en cuenta del circuito: longitud de zona de sobrepaso.
@@ -100,7 +102,7 @@ public class Car {
         //y/o rectas prolongadas para sobrepasar a otros autos.
         return 0;//no devuelve nada por ahora
     }
-    public int reliability(){
+    public static int reliability(){
         //Determina qué tan confiable es el auto: A menor valor de este
         //atributo, mayores probabilidades de que vaya a abandonar
         //durante la carrera por desperfectos mecánicos
