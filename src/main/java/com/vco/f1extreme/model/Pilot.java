@@ -96,4 +96,9 @@ public class Pilot  {
     public void setBudget(String budget) {
         this.budget = budget;
     }
+
+    @Override
+    public String toString() {
+        return "Name:\t" + pilotName + "\nNick:\t" + nickname + "\nCountry:\t" + country + "\nChampionships:\t" + championshipsWon;
+    }
 }

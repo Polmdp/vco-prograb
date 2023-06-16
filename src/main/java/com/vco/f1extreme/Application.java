@@ -5,27 +5,21 @@ import main.java.com.vco.f1extreme.model.Pilot;
 import main.java.com.vco.f1extreme.model.Player;
 import main.java.com.vco.f1extreme.service.PlayerSelection;
 import main.java.com.vco.f1extreme.service.DataInitializer;
+
 import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
 
-
-        // Obtener los pilotos por defecto
+        // list default pilots
         List<Pilot> availablePilots = DataInitializer.getDefaultPilots();
 
-        // Crear una instancia de PlayerSelection con los pilotos por defecto
+        // new playerselection instance
         PlayerSelection playerSelection = new PlayerSelection(availablePilots);
-        Pilot pilot = availablePilots.get(0);
-        Car car = new Car("Red",2,"Ford",102,80,1,1);
-        // Add players
-        playerSelection.addPlayer(new Player("Player 1", "Red",pilot,car));
 
+        // add player + pilot selection
+        Player newPlayer = playerSelection.addPlayerWithSelection();
 
-
-        Player selectedPlayer = playerSelection.selectPlayer();
-
-        System.out.println("You selected: " + selectedPlayer.getName() + selectedPlayer.getName() + selectedPlayer.getPilot().getNickname());
-    }
+        // print
+        System.out.println("Player Name: " + newPlayer.getName() + "\nSelected Pilot:\n " + newPlayer.getPilot().toString());    }
 }
-
