@@ -21,7 +21,7 @@ public class Application {
 
         Player selectedPlayer = playerSelection.selectPlayer();
 
-        System.out.println("You selected: " + selectedPlayer.getName());
+        System.out.println("You selected: " + selectedPlayer.getName() + selectedPlayer.getName() + selectedPlayer.getPilot().getNickname());
     }
 }
 
