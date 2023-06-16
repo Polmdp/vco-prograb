@@ -1,62 +1,99 @@
 package main.java.com.vco.f1extreme.model;
 
-public class Pilot extends  Player {
+public class Pilot  {
 
-    private String nombrepiloto;
-    private String apodo;
-    private String pais;
-    private int carrerascorridas;
-    private int carrerasganadas;
-    private int campeonatosjugados;
-    private int campeonatosganados;
-    private int cantidadpolepositions; //cantidad de veces que arranco primero una carrera;
-    private String presupuesto; //(ALTO/MEDIO/BAJO);
+    private String pilotName;
+    private String nickname;
+    private String country;
+    private int racesRun;
+    private int racesWon;
+    private int championshipsPlayed;
+    private int championshipsWon;
+    private int numberPolePositions;
+    private String budget;
 
-    public Pilot(String nombrepiloto, String apodo, String pais, int carrerascorridas, int carrerasganadas, int campeonatosjugados, int campeonatosganados, int cantidadpolepositions, String presupuesto) {
-        this.nombrepiloto = nombrepiloto;
-        this.apodo = apodo;
-        this.pais = pais;
-        this.carrerascorridas = carrerascorridas;
-        this.carrerasganadas = carrerasganadas;
-        this.campeonatosjugados = campeonatosjugados;
-        this.campeonatosganados = campeonatosganados;
-        this.cantidadpolepositions = cantidadpolepositions;
-        this.presupuesto = presupuesto;
+
+    public Pilot(String pilotName, String nickname, String country, int racesRun, int racesWon, int championshipsPlayed, int championshipsWon, int numberPolePositions, String budget) {
+        this.pilotName = pilotName;
+        this.nickname = nickname;
+        this.country = country;
+        this.racesRun = racesRun;
+        this.racesWon = racesWon;
+        this.championshipsPlayed = championshipsPlayed;
+        this.championshipsWon = championshipsWon;
+        this.numberPolePositions = numberPolePositions;
+        this.budget = budget;
     }
 
-    public String getNombrepiloto() {
-        return nombrepiloto;
-    }
-    public String getApodo() {
-        return apodo;
+    public String getPilotName() {
+        return pilotName;
     }
 
-    public String getPais() {
-        return pais;
+    public void setPilotName(String pilotName) {
+        this.pilotName = pilotName;
     }
 
-    public int getCarrerascorridas() {
-        return carrerascorridas;
+    public String getNickname() {
+        return nickname;
     }
 
-    public int getCarrerasganadas() {
-        return carrerasganadas;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public int getCampeonatosjugados() {
-        return campeonatosjugados;
+    public String getCountry() {
+        return country;
     }
 
-    public int getCampeonatosganados() {
-        return campeonatosganados;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public int getCantidadpolepositions() {
-        return cantidadpolepositions;
+    public int getRacesRun() {
+        return racesRun;
     }
 
-    public String getPresupuesto() {
-        return presupuesto;
+    public void setRacesRun(int racesRun) {
+        this.racesRun = racesRun;
     }
 
+    public int getRacesWon() {
+        return racesWon;
+    }
+
+    public void setRacesWon(int racesWon) {
+        this.racesWon = racesWon;
+    }
+
+    public int getChampionshipsPlayed() {
+        return championshipsPlayed;
+    }
+
+    public void setChampionshipsPlayed(int championshipsPlayed) {
+        this.championshipsPlayed = championshipsPlayed;
+    }
+
+    public int getChampionshipsWon() {
+        return championshipsWon;
+    }
+
+    public void setChampionshipsWon(int championshipsWon) {
+        this.championshipsWon = championshipsWon;
+    }
+
+    public int getNumberPolePositions() {
+        return numberPolePositions;
+    }
+
+    public void setNumberPolePositions(int numberPolePositions) {
+        this.numberPolePositions = numberPolePositions;
+    }
+
+    public String getBudget() {
+        return budget;
+    }
+
+    public void setBudget(String budget) {
+        this.budget = budget;
+    }
 }

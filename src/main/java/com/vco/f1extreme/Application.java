@@ -1,5 +1,27 @@
 package main.java.com.vco.f1extreme;
 
-public class Application {
+import main.java.com.vco.f1extreme.model.Car;
+import main.java.com.vco.f1extreme.model.Pilot;
+import main.java.com.vco.f1extreme.model.Player;
+import main.java.com.vco.f1extreme.service.PlayerSelection;
 
+public class Application {
+    public static void main(String[] args) {
+
+
+        // Create an instance of PlayerSelection
+        PlayerSelection playerSelection = new PlayerSelection();
+
+        Pilot pilot = new Pilot("Castro", "Fiaca", "ARG", 5, 3, 10, 2, 4, "HIGH");
+        Car car = new Car("Red",2,"Ford",102,80,1,1);
+        // Add players
+        playerSelection.addPlayer(new Player("Player 1", "Red",pilot,car));
+
+
+
+        Player selectedPlayer = playerSelection.selectPlayer();
+
+        System.out.println("You selected: " + selectedPlayer.getName() + selectedPlayer.getName() + selectedPlayer.getPilot().getNickname());
+    }
 }
+
