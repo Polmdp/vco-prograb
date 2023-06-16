@@ -1,4 +1,6 @@
-package main.java.com.vco.f1extreme.model;
+package main.java.com.vco.f1extreme.model.Tiretypes;
+
+import main.java.com.vco.f1extreme.model.Tire;
 
 public class hard extends Tire {
 //Ofrecen la mayor durabilidad, pero con menor agarre y, por ende,
