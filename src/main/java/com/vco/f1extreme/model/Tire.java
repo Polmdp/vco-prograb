@@ -27,34 +27,42 @@ public class Tire {
     }
 
     public String getSoft() {
+
         return soft;
     }
 
     public void setSoft(String soft) {
+
         this.soft = soft;
     }
 
     public String getHard() {
+
         return hard;
     }
 
     public void setHard(String hard) {
+
         this.hard = hard;
     }
 
     public String getMedium() {
+
         return medium;
     }
 
     public void setMedium(String medium) {
+
         this.medium = medium;
     }
 
     public String getWet() {
+
         return wet;
     }
 
     public void setWet(String wet) {
+
         this.wet = wet;
     }
 }
