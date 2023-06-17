@@ -1,7 +1,11 @@
 package main.java.com.vco.f1extreme.model;
 
+import javax.swing.*;
+import java.net.URL;
+
 public class Pilot  {
 
+    private ImageIcon imageIcon;
     private String pilotName;
     private String nickname;
     private String country;
@@ -11,6 +15,28 @@ public class Pilot  {
     private int championshipsWon;
     private int numberPolePositions;
     private String budget;
+
+    public Pilot(String pilotName, String nickname, String country, int racesRun, int racesWon,
+                 int championshipsPlayed, int championshipsWon, int numberPolePositions,
+                 String budget) {
+        this.pilotName = pilotName;
+        this.nickname = nickname;
+        this.country = country;
+        this.racesRun = racesRun;
+        this.racesWon = racesWon;
+        this.championshipsPlayed = championshipsPlayed;
+        this.championshipsWon = championshipsWon;
+        this.numberPolePositions = numberPolePositions;
+        this.budget = budget;
+
+
+        URL imageUrl = getClass().getClassLoader().getResource("main/resources/img/avatar/" + pilotName + ".png");
+        if (imageUrl != null) {
+            this.imageIcon = new ImageIcon(imageUrl);
+        } else {
+            System.err.println("Couldn't find file: " + pilotName + ".png");
+        }
+    }
     public static int overstep() //sobrepaso
     {
         //en este metodo se va a ver la cantidad de veces que un piloto tiene la oportunida de adelantarsea otro piloto
@@ -44,17 +70,8 @@ public class Pilot  {
     }
 
 
-    public Pilot(String pilotName, String nickname, String country, int racesRun, int racesWon, int championshipsPlayed, int championshipsWon, int numberPolePositions, String budget) {
-        this.pilotName = pilotName;
-        this.nickname = nickname;
-        this.country = country;
-        this.racesRun = racesRun;
-        this.racesWon = racesWon;
-        this.championshipsPlayed = championshipsPlayed;
-        this.championshipsWon = championshipsWon;
-        this.numberPolePositions = numberPolePositions;
-        this.budget = budget;
-    }
+
+
 
     public String getPilotName() {
         return pilotName;
@@ -127,6 +144,12 @@ public class Pilot  {
     public void setBudget(String budget) {
         this.budget = budget;
     }
+
+
+    public ImageIcon getImageIcon() {
+        return this.imageIcon;
+    }
+
 
     @Override
     public String toString() {

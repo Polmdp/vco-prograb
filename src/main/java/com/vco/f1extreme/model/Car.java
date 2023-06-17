@@ -1,5 +1,8 @@
 package main.java.com.vco.f1extreme.model;
 
+import javax.swing.*;
+import java.net.URL;
+
 public class Car {
     private String color;
     private int number;
@@ -9,6 +12,16 @@ public class Car {
     private float acceleration;
     private float fuelconsumption;
 
+    public ImageIcon getImageIcon() {
+        return imageIcon;
+    }
+
+    public void setImageIcon(ImageIcon imageIcon) {
+        this.imageIcon = imageIcon;
+    }
+
+    private ImageIcon imageIcon;
+
     public Car(String color, int number, String brand, float weight, float maxspeed, float acceleration, float fuelconsumption) {
         this.color = color;
         this.number = number;
@@ -17,6 +30,13 @@ public class Car {
         this.maxspeed = maxspeed;
         this.acceleration = acceleration;
         this.fuelconsumption = fuelconsumption;
+        URL imageUrl = getClass().getClassLoader().getResource("main/resources/img/avatar/" + brand + ".png");
+        if (imageUrl != null) {
+            this.imageIcon = new ImageIcon(imageUrl);
+        } else {
+            System.err.println("Couldn't find file: " + brand + ".png");
+        }
+
     }
 
     public String getColor() {
@@ -51,11 +71,11 @@ public class Car {
         this.weight = weight;
     }
 
-    public float getMaxspeed() {
+    public float getMaxSpeed() {
         return maxspeed;
     }
 
-    public void setMaxspeed(float maxspeed) {
+    public void setMaxSpeed(float maxspeed) {
         this.maxspeed = maxspeed;
     }
 
@@ -67,11 +87,11 @@ public class Car {
         this.acceleration = acceleration;
     }
 
-    public float getFuelconsumption() {
+    public float getFuelConsumption() {
         return fuelconsumption;
     }
 
-    public void setFuelconsumption(float fuelconsumption) {
+    public void setFuelConsumption(float fuelconsumption) {
         this.fuelconsumption = fuelconsumption;
     }
 
