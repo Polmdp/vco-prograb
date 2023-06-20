@@ -128,4 +128,15 @@ public class Car {
         //durante la carrera por desperfectos mecánicos
         return 0;//no devuelve nada por ahora
     }
+    public static float FuelConsumptionPerLap(){
+        //cada vuelta en un circuito mide 5.17 km de longitud
+        //60 litros por cada 100 kilómetros recorridos
+        //puede almacenar 145 litros
+        return 0;
+    }
+    public static float OvertakePerformance(float acceleration,float maxspeed ){
+        // si la defensa del auto de adelante es menor a este atributo del auto este tomara la posicion del de adelante.
+    return 0;
+    }
+
 }
