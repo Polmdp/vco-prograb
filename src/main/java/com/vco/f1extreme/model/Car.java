@@ -128,15 +128,15 @@ public class Car {
         //durante la carrera por desperfectos mecánicos
         return 0;//no devuelve nada por ahora
     }
-    public static float FuelConsumptionPerLap(){
-        //cada vuelta en un circuito mide 5.17 km de longitud
-        //60 litros por cada 100 kilómetros recorridos
-        //puede almacenar 145 litros
-        return 0;
+    public static float FuelConsumptionPerLap(float weight, int trackLength,int fuelconsumption,int maxspeed){
+        float compustionperlap=0;
+        compustionperlap=(((trackLength*fuelconsumption)/100)*4)+(weight*3)+(maxspeed*2);
+        return compustionperlap/350;
     }
-    public static float OvertakePerformance(float acceleration,float maxspeed ){
-        // si la defensa del auto de adelante es menor a este atributo del auto este tomara la posicion del de adelante.
-    return 0;
+    public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
+       float accelerationsim=0;
+
+    return accelerationsim;
     }
 
 }
