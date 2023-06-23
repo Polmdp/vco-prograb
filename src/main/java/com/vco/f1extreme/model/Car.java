@@ -109,7 +109,7 @@ public class Car {
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
     public static int perfcurves(){
-        int perfcurves;
+        int perfcurves=0;
         int variablecurves;
             if (circuit.getCurves()==1) {//open
                 perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 2);
@@ -121,14 +121,8 @@ public class Car {
                 if (circuit.getCurves()==2)//close
                 {
                     perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 4);
-                    variablecurves=new NormalizeVariable(perfcurves,500,14000);
-                }
-           //
-        //tener en cuenta del auto :aceleracion,peso,frenos .
-        //tener en cuenta del piloto:...
-        //tener en cuenta del circuito: tipo de curva?.
-        //tener en cuenta el tipo de neumatico del momento.
-        ////Determina cómo es el comportamiento del auto en las curvas
+                            variablecurves=new NormalizeVariable(perfcurves,500,14000);
+                        }
         return perfcurves;//no devuelve nada por ahora
     }
     public static int perfoverruns(){
@@ -146,15 +140,15 @@ public class Car {
         //durante la carrera por desperfectos mecánicos
         return 0;//no devuelve nada por ahora
     }
-    public static float FuelConsumptionPerLap(float weight, int trackLength,int fuelconsumption,int maxspeed){
+    public static float FuelConsumptionPerLap(float calculateWeightEffect, int trackLength,int fuelconsumption,int maxspeed){
         float compustionperlap=0;
-        compustionperlap=(((trackLength*fuelconsumption)/100)*4)+(weight*3)+(maxspeed*2);
+        compustionperlap=(((trackLength*fuelconsumption)/100)*4)+(calculateWeightEffect*3)+(maxspeed*2);
         //add some variation for the type of tire
         return compustionperlap/250;
     }
-    public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
+    public static float simulateAcceleration(float acceleration,float maxspeed,float calculateWeightEffect){
        float accelerationsim=0;
-       accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+weight)/35);
+       accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+calculateWeightEffect)/35);
 
     return accelerationsim;
     }
