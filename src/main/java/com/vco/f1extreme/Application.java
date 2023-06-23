@@ -23,7 +23,6 @@ public class Application {
 
         List<Car> availableCars = DataInitializer.getDefaultCars();
         List<Pilot> availablePilots = DataInitializer.getDefaultPilots();
-
         PilotSelectionFrame frame = new PilotSelectionFrame(availablePilots, availableCars);
         frame.setVisible(true);
     }

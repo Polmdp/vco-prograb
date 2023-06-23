@@ -140,4 +140,9 @@ public class Car {
     return accelerationsim;
     }
 
+    public static float calculateWeightEffect() {
+
+        return 0;
+    }
+
 }
