@@ -112,15 +112,16 @@ public class Car {
         int perfcurves;
         int variablecurves;
             if (circuit.getCurves()==1) {//open
-                perfcurves = calculateWeightEffect() * (simulateAcceleration() * 3) * (stop() * 2);
-                variablecurves=new NormalizeVariable(perfcurves,6,750);
-
+                perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 2);
+                variablecurves=new NormalizeVariable(perfcurves,250,7000);
+            //125 minacelerattion
+                //140 maxacelerattion
             }
             else
                 if (circuit.getCurves()==2)//close
                 {
-                    perfcurves = calculateWeightEffect() * (simulateAcceleration() * 2) * (stop() * 4);
-                    variablecurves=new NormalizeVariable(perfcurves,8,1000);
+                    perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 4);
+                    variablecurves=new NormalizeVariable(perfcurves,500,14000);
                 }
            //
         //tener en cuenta del auto :aceleracion,peso,frenos .
