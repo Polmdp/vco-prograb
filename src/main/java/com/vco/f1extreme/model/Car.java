@@ -131,11 +131,12 @@ public class Car {
     public static float FuelConsumptionPerLap(float weight, int trackLength,int fuelconsumption,int maxspeed){
         float compustionperlap=0;
         compustionperlap=(((trackLength*fuelconsumption)/100)*4)+(weight*3)+(maxspeed*2);
-        //agregar alguna variacion por el tipo de neumatico
-        return compustionperlap/350;
+        //add some variation for the type of tire
+        return compustionperlap/250;
     }
     public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
        float accelerationsim=0;
+       accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+weight)/35);
 
     return accelerationsim;
     }
