@@ -145,7 +145,7 @@ public class Car {
     }
 
     public static float calculateWeightEffect(float weight) {
-        float weightFactor= 1.0F;
+        float weightFactor= 2.5F;
         if (weight > 850 ){
             weightFactor += 0.005 * (weight - 850);
         } else if (weight <= 850) {
@@ -153,8 +153,9 @@ public class Car {
             
         }
 
-
-        return (float) NormalizeVariable.normalizeVariable(weightFactor,849);
+        return (float) NormalizeVariable.normalizeVariable(weightFactor);
     }
+
+
 
 }

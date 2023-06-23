@@ -8,6 +8,7 @@ import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 import java.util.List;
 
+import static main.java.com.vco.f1extreme.model.Car.calculateWeightEffect;
 
 
 public class PilotSelectionFrame extends JFrame {
@@ -89,6 +90,7 @@ public class PilotSelectionFrame extends JFrame {
             });
 
             carPanel.add(button);
+            float weightEffect = calculateWeightEffect(car.getWeight());
 
             JLabel infoLabel = new JLabel("<html>Brand: " + car.getBrand() + "<br/>" +
                     "Color: " + car.getColor() + "<br/>" +
@@ -96,6 +98,7 @@ public class PilotSelectionFrame extends JFrame {
                     "Weight: " + car.getWeight() + "<br/>" +
                     "Max Speed: " + car.getMaxSpeed() + "<br/>" +
                     "Acceleration: " + car.getAcceleration() + "<br/>" +
+                    "Weight Effect: " + weightEffect + "<br/>" +
                     "Fuel Consumption: " + car.getFuelConsumption() + "</html>");
 
             carPanel.add(infoLabel);
