@@ -25,7 +25,7 @@ public class DataInitializer {
         cars.add(new Car("Red", 1, "Ferrari", 750, 350, 2.5f, 12.5f));
         cars.add(new Car("Silver", 44, "Mercho", 800, 345, 2.4f, 11.8f));
         cars.add(new Car("Orange", 33, "McLaren", 720, 335, 2.6f, 12.2f));
-        // Agrega más escuderías y sus detalles aquí...
+
 
         return cars;
     }
