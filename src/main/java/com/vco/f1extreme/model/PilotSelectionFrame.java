@@ -4,12 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 import java.util.List;
 
 
 
 public class PilotSelectionFrame extends JFrame {
-
+    imagenfondo fondo=new imagenfondo();
     private JPanel cardPanel;
     private CardLayout cardLayout;
 
@@ -17,9 +19,9 @@ public class PilotSelectionFrame extends JFrame {
         setTitle("Selecciona un Piloto Broder");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
-
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);
+
 
         JPanel pilotSelectionPanel = createPilotSelectionPanel(availablePilots);
         cardPanel.add(pilotSelectionPanel, "PilotSelection");
@@ -69,6 +71,7 @@ public class PilotSelectionFrame extends JFrame {
     }
 
     private JPanel createCarSelectionPanel(List<Car> availableCars) {
+
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(0, 3));
 
@@ -113,4 +116,20 @@ public class PilotSelectionFrame extends JFrame {
         //car selection
         System.out.println("Selected Car: " + selectedCar.toString());
     }
+    class imagenfondo extends JPanel{
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            super.paint(g);
+            imagen = new ImageIcon(getClass().getResource("Fondo.png")).getImage();
+            g.drawImage(imagen, 800, 600, getWidth(), getHeight(), this);
+            setOpaque(false);
+        }
+
+
+
+    }
+
 }
+
+
