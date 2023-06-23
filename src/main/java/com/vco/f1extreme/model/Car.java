@@ -1,5 +1,7 @@
 package main.java.com.vco.f1extreme.model;
 
+import main.java.com.vco.f1extreme.utils.NormalizeVariable;
+
 import javax.swing.*;
 import java.net.URL;
 
@@ -11,6 +13,7 @@ public class Car {
     private float maxspeed;
     private float acceleration;
     private float fuelconsumption;
+    private static Circuit circuit;
 
     public ImageIcon getImageIcon() {
         return imageIcon;
@@ -97,21 +100,35 @@ public class Car {
 
     //metodos............
     public static int stop(){
-        //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 100).
+        //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 5).
         return 0;//no devuelve nada por ahora
     }
     public static int start(){
-        //este metodo va ser para ver como acelerar el auto al arrancar la carrera(1 al 100).
+        //este metodo va ser para ver como acelerar el auto al arrancar la carrera(1 al 5).
         return 0;//no devuelve nada por ahora
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
     public static int perfcurves(){
+        int perfcurves;
+        int variablecurves;
+            if (circuit.getCurves()==1) {//open
+                perfcurves = calculateWeightEffect() * (simulateAcceleration() * 3) * (stop() * 2);
+                variablecurves=new NormalizeVariable(perfcurves,6,750);
+
+            }
+            else
+                if (circuit.getCurves()==2)//close
+                {
+                    perfcurves = calculateWeightEffect() * (simulateAcceleration() * 2) * (stop() * 4);
+                    variablecurves=new NormalizeVariable(perfcurves,8,1000);
+                }
+           //
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del piloto:...
         //tener en cuenta del circuito: tipo de curva?.
         //tener en cuenta el tipo de neumatico del momento.
         ////Determina cómo es el comportamiento del auto en las curvas
-        return 0;//no devuelve nada por ahora
+        return perfcurves;//no devuelve nada por ahora
     }
     public static int perfoverruns(){
         //tener en cuenta del auto :aceleracion,peso,velmax .
