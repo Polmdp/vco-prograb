@@ -1,11 +1,7 @@
 package main.java.com.vco.f1extreme.model;
 
-
-import main.java.com.vco.f1extreme.utils.NormalizeVariable;
-
 import javax.swing.*;
 import java.net.URL;
-
 
 public class Car {
     private String color;
@@ -144,18 +140,9 @@ public class Car {
     return accelerationsim;
     }
 
-    public static float calculateWeightEffect(float weight) {
-        float weightFactor= 2.5F;
-        if (weight > 850 ){
-            weightFactor += 0.005 * (weight - 850);
-        } else if (weight <= 850) {
-            weightFactor -= 0.003 * (850 - weight);
-            
-        }
+    public static float calculateWeightEffect() {
 
-        return (float) NormalizeVariable.normalizeVariable(weightFactor);
+        return 0;
     }
-
-
 
 }
