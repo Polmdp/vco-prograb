@@ -16,8 +16,8 @@ public class DataInitializer {
 
         //todos los pilotos
         pilots.add(new Pilot("Castro","Fiaca","ARG",5,3,10,2,4,"HIGH"));
-        pilots.add(new Pilot("Pablo","El mandarin","CHI",6,1,2,1,6,"MEDIUM"));
-        pilots.add(new Pilot("Joaquin","Dormilon","BOL",8,2,3,0,3,"LOW"));
+        pilots.add(new Pilot("Pablo","El mandarin","ARG",6,1,2,1,6,"MEDIUM"));
+        pilots.add(new Pilot("Joaquin","Dormilon","USA",8,2,3,0,3,"LOW"));
 
         return pilots;
     }
@@ -25,7 +25,7 @@ public class DataInitializer {
         List<Car> cars = new ArrayList<>();
 
         cars.add(new Car("Red", 1, "Ferrari", 1500, 350, 2.5f, 12.5f));
-        cars.add(new Car("Silver", 44, "Mercho", 900, 345, 2.4f, 11.8f));
+        cars.add(new Car("Silver", 44, "El Mercho", 900, 345, 2.4f, 11.8f));
         cars.add(new Car("Orange", 33, "McLaren", 720, 335, 2.6f, 12.2f));
 
 
