@@ -10,8 +10,7 @@ public class DataInitializer {
     public static List<Pilot> getDefaultPilots()
     {
         List<Pilot>pilots=new ArrayList<>();
-        //List es una interfaz que se usa para representar una lista ordenada de elementos.
-        // Puedes realizar operaciones como agregar, remover e iterar sobre elementos en una List.
+
 
 
         //todos los pilotos
@@ -25,7 +24,7 @@ public class DataInitializer {
         List<Car> cars = new ArrayList<>();
 
         cars.add(new Car("Red", 1, "Ferrari", 1500, 350, 2.5f, 12.5f));
-        cars.add(new Car("Silver", 44, "El Mercho", 900, 345, 2.4f, 11.8f));
+        cars.add(new Car("Silver", 44, "Mercho", 900, 345, 2.4f, 11.8f));
         cars.add(new Car("Orange", 33, "McLaren", 720, 335, 2.6f, 12.2f));
 
 
