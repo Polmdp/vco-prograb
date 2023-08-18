@@ -169,7 +169,7 @@ public class Car {
         float maxWeight = 908.0f;
         //set the values for weight in range
         float rangeWeight = Math.min(Math.max(weight, minWeight), maxWeight);
-        int  resulteffect= Math.round((rangeWeight-maxWeight)/(minWeight-maxWeight)*100) ;
+        int  resulteffect= Math.round((rangeWeight-maxWeight-1)/(minWeight-maxWeight)*99) ;
         return resulteffect;
 
     }
