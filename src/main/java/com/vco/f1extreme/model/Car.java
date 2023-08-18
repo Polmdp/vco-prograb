@@ -108,9 +108,9 @@ public class Car {
         return 0;//no devuelve nada por ahora
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
-    public static int perfcurves(){
-        int perfcurves;
-        int variablecurves;
+    public static double perfcurves(){
+        double perfcurves;
+        double variablecurves;
             if (circuit.getCurves()==1) {//open
                 perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 2);
                 variablecurves=new NormalizeVariable(perfcurves,250,7000);
@@ -121,7 +121,8 @@ public class Car {
                 if (circuit.getCurves()==2)//close
                 {
                     perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 4);
-                    variablecurves=new NormalizeVariable(perfcurves,500,14000);
+                    variablecurves=new NormalizeVariable(new normalizeVariable(perfcurves,500,14000));
+
                 }
            //
         //tener en cuenta del auto :aceleracion,peso,frenos .
