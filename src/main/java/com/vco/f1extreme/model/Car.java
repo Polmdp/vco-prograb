@@ -109,14 +109,14 @@ public class Car {
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
 
-    public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
-        float accelerationsim=0;
-        accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+weight)/35);
+//    public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
+//        float accelerationsim=0;
+//        accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+weight)/35);
+//
+//        return accelerationsim;
+//    }
 
-        return accelerationsim;
-    }
-
-    public static int perfcurves(){
+    public int perfcurves(){
         int perfcurves;
         int stopMultiplier;
 
@@ -131,7 +131,7 @@ public class Car {
                 throw new IllegalArgumentException("Curve not valid...");
         }
 
-        return calculateWeightEffect() * simulateAcceleration() * stop() * stopMultiplier;
+        return calculateWeightEffect(this.weight) * simulateAcceleration() * stop() * stopMultiplier;
         //
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del circuito: tipo de curva?.
