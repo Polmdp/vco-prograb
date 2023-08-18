@@ -132,15 +132,17 @@ public class Car {
         }
 
         return calculateWeightEffect() * simulateAcceleration() * stop() * stopMultiplier;
-    }
-           //
+        //
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del piloto:...
         //tener en cuenta del circuito: tipo de curva?.
         //tener en cuenta el tipo de neumatico del momento.
         ////Determina cómo es el comportamiento del auto en las curvas
         //no devuelve nada por ahora
+
     }
+
+
     public static int perfoverruns(){
         //tener en cuenta del auto :aceleracion,peso,velmax .
         //tener en cuenta del piloto:nada ya que depende solo del auto.
