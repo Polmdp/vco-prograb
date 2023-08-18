@@ -102,7 +102,7 @@ public class Car {
     public static int stop(){
         //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 5).
         int brakeScore = 50;
-        switch (circuit.getWeather()) {
+        switch (Weather.NUBLADO) {
             case SOLEADO:
                 brakeScore += 10; // Buenas condiciones
                 break;
@@ -137,18 +137,7 @@ public class Car {
         int perfcurves;
         int stopMultiplier;
 
-        switch (circuit.getCurves()) {
-            case 1: //open
-                stopMultiplier = 2; //  multiplicador x 2
-                break;
-            case 2: //close
-                stopMultiplier = 4; //  multiplicador x 4
-                break;
-            default:
-                throw new IllegalArgumentException("Curve not valid...");
-        }
-
-        return Math.round(calculateWeightEffect(this.weight) * this.acceleration * stop() * stopMultiplier) ;
+        return Math.round(calculateWeightEffect(this.weight) * this.acceleration * stop() ) ;
         //
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del circuito: tipo de curva?.

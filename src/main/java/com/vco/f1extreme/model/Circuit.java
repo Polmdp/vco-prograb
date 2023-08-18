@@ -1,13 +1,14 @@
 package main.java.com.vco.f1extreme.model;
 
+import java.util.List;
 import java.util.Random;
 
 public class Circuit {
-    public enum typecurve{
-        1,//open
-        2;//close
-    }
 
+    public enum typecurve{
+        OPEN,//open
+       CLOSE;//close
+    }
     private String name;
     private String country;
     private int trackLength;
@@ -15,12 +16,12 @@ public class Circuit {
     private String infographic;
     private String lapRecord;
     private int overtakeZones;
-    private List<typecurve> curves;
 
+    private List<typecurve> curves;
     private Weather weather;
 
 
-    public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, int curves, Weather weather) {
+    public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, List<typecurve> curves, Weather weather) {
         this.name = name;
         this.country = country;
         this.trackLength = trackLength;
@@ -91,12 +92,12 @@ public class Circuit {
         this.overtakeZones = overtakeZones;
     }
 
-    public int getCurves() {
-        return curves;
+    public void setCurves(List<typecurve> curves) {
+        this.curves = curves;
     }
 
-    public void setCurves(int curves) {
-        this.curves = curves;
+    public List<typecurve> getCurves() {
+        return curves;
     }
 
     public Weather getWeather() {

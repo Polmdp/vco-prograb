@@ -112,7 +112,7 @@ public class PilotSelectionFrame extends JFrame {
                     "Max Speed: " + car.getMaxSpeed() + "<br/>" +
                     "Acceleration: " + car.getAcceleration() + "<br/>" +
                     "Weight Effect: " + weightEffect + "<br/>" +
-                  //  "Perf Curves: " + car.perfcurves() + "<br/>" +
+                    "Perf Curves: " + car.perfcurves() + "<br/>" +
                     "Fuel Consumption: " + car.getFuelConsumption() + "</html>");
 
             carPanel.add(infoLabel);

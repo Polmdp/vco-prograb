@@ -4,6 +4,7 @@ import main.java.com.vco.f1extreme.model.Pilot;
 import main.java.com.vco.f1extreme.model.Circuit;
 import main.java.com.vco.f1extreme.model.Weather;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DataInitializer {
@@ -37,8 +38,8 @@ public class DataInitializer {
 
     public static List<Circuit> getDefaultCircuits() {
         List<Circuit> circuits = new ArrayList<>();
-
-        circuits.add(new Circuit("Monaco", "Monaco", 3300, 78, "infographicURL1", "1:14.260", 3, 19, Weather.NUBLADO));
+        List<Circuit.typecurve> monacoCurves = Arrays.asList(Circuit.typecurve.OPEN, Circuit.typecurve.CLOSE);
+        circuits.add(new Circuit("Monaco", "Monaco", 3300, 78, "infographicURL1", "1:14.260", 3, monacoCurves, Weather.NUBLADO));
 
 
         return circuits;
