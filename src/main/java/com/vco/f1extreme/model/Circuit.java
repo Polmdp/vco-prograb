@@ -12,7 +12,7 @@ public class Circuit {
     private int overtakeZones;
     private int curves;
 
-    private Clima clima;
+    private Weather clima;
 
 
     public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, int curves) {
