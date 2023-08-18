@@ -1,5 +1,8 @@
 package main.java.com.vco.f1extreme.model;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,6 +11,7 @@ import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 import java.util.List;
 
+import static main.java.com.vco.f1extreme.model.Car.calculateWeightEffect;
 
 
 public class PilotSelectionFrame extends JFrame {
@@ -71,7 +75,6 @@ public class PilotSelectionFrame extends JFrame {
     }
 
     private JPanel createCarSelectionPanel(List<Car> availableCars) {
-
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(0, 3));
 
@@ -85,10 +88,22 @@ public class PilotSelectionFrame extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     handleCarSelection(car);
+
+                    if (car.getBrand().equals("Mercho")) {
+                        try {
+                            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("main/resources/sounds/mercho2.wav"));
+                            Clip clip = AudioSystem.getClip();
+                            clip.open(audioInputStream);
+                            clip.start();
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    }
                 }
             });
 
             carPanel.add(button);
+            float weightEffect = calculateWeightEffect();
 
             JLabel infoLabel = new JLabel("<html>Brand: " + car.getBrand() + "<br/>" +
                     "Color: " + car.getColor() + "<br/>" +
@@ -96,6 +111,7 @@ public class PilotSelectionFrame extends JFrame {
                     "Weight: " + car.getWeight() + "<br/>" +
                     "Max Speed: " + car.getMaxSpeed() + "<br/>" +
                     "Acceleration: " + car.getAcceleration() + "<br/>" +
+                    "Weight Effect: " + weightEffect + "<br/>" +
                     "Fuel Consumption: " + car.getFuelConsumption() + "</html>");
 
             carPanel.add(infoLabel);
@@ -104,6 +120,7 @@ public class PilotSelectionFrame extends JFrame {
 
         return panel;
     }
+
 
     private void handlePilotSelection(Pilot selectedPilot) {
 

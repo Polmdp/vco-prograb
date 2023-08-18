@@ -4,12 +4,10 @@ import main.java.com.vco.f1extreme.model.Pilot;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.List;
-
 public class DataInitializer {
     public static List<Pilot> getDefaultPilots()
     {
-        List<Pilot> pilots=new ArrayList<>();
+        List<Pilot>pilots=new ArrayList<>();
         //List es una interfaz que se usa para representar una lista ordenada de elementos.
         // Puedes realizar operaciones como agregar, remover e iterar sobre elementos en una List.
 
