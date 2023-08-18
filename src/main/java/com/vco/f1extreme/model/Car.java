@@ -108,28 +108,38 @@ public class Car {
         return 0;//no devuelve nada por ahora
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
+
+    public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
+        float accelerationsim=0;
+        accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+weight)/35);
+
+        return accelerationsim;
+    }
+
     public static int perfcurves(){
         int perfcurves;
-        int variablecurves;
-            if (circuit.getCurves()==1) {//open
-                perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 2);
-                variablecurves=new NormalizeVariable(perfcurves,250,7000);
-            //125 minacelerattion
-                //140 maxacelerattion
-            }
-            else
-                if (circuit.getCurves()==2)//close
-                {
-                    perfcurves = calculateWeightEffect() * (simulateAcceleration()) * (stop() * 4);
-                    variablecurves=new NormalizeVariable(perfcurves,500,14000);
-                }
+        int stopMultiplier;
+
+        switch (circuit.getCurves()) {
+            case 1: //open
+                stopMultiplier = 2; //  multiplicador x 2
+                break;
+            case 2: //close
+                stopMultiplier = 4; //  multiplicador x 2
+                break;
+            default:
+                throw new IllegalArgumentException("Curve not valid...");
+        }
+
+        return calculateWeightEffect() * simulateAcceleration() * stop() * stopMultiplier;
+    }
            //
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del piloto:...
         //tener en cuenta del circuito: tipo de curva?.
         //tener en cuenta el tipo de neumatico del momento.
         ////Determina cómo es el comportamiento del auto en las curvas
-        return perfcurves;//no devuelve nada por ahora
+        //no devuelve nada por ahora
     }
     public static int perfoverruns(){
         //tener en cuenta del auto :aceleracion,peso,velmax .
@@ -151,12 +161,6 @@ public class Car {
         compustionperlap=(((trackLength*fuelconsumption)/100)*4)+(weight*3)+(maxspeed*2);
         //add some variation for the type of tire
         return compustionperlap/250;
-    }
-    public static float simulateAcceleration(float acceleration,float maxspeed,float weight){
-       float accelerationsim=0;
-       accelerationsim= (float) ((((acceleration*1000/36*2.8)*3)+(maxspeed*2)+weight)/35);
-
-    return accelerationsim;
     }
 
     public static float calculateWeightEffect() {
