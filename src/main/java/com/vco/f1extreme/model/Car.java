@@ -125,7 +125,7 @@ public class Car {
                 stopMultiplier = 2; //  multiplicador x 2
                 break;
             case 2: //close
-                stopMultiplier = 4; //  multiplicador x 2
+                stopMultiplier = 4; //  multiplicador x 4
                 break;
             default:
                 throw new IllegalArgumentException("Curve not valid...");
@@ -134,7 +134,6 @@ public class Car {
         return calculateWeightEffect() * simulateAcceleration() * stop() * stopMultiplier;
         //
         //tener en cuenta del auto :aceleracion,peso,frenos .
-        //tener en cuenta del piloto:...
         //tener en cuenta del circuito: tipo de curva?.
         //tener en cuenta el tipo de neumatico del momento.
         ////Determina cómo es el comportamiento del auto en las curvas
@@ -165,7 +164,13 @@ public class Car {
         return compustionperlap/250;
     }
 
-    public static float calculateWeightEffect() {
+    public float calculateWeightEffect(float weight) {
+        float minWeight = 800.0f;
+        float maxWeight = 908.0f;
+        //set the values for weight in range
+        float rangeWeight = Math.min(Math.max(weight, minWeight), maxWeight);
+
+
 
         return 0;
     }
