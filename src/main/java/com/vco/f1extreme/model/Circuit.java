@@ -1,5 +1,7 @@
 package main.java.com.vco.f1extreme.model;
 
+import java.util.Random;
+
 public class Circuit {
 
 
@@ -12,10 +14,10 @@ public class Circuit {
     private int overtakeZones;
     private int curves;
 
-    private Weather clima;
+    private Weather weather;
 
 
-    public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, int curves) {
+    public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, int curves, Weather weather) {
         this.name = name;
         this.country = country;
         this.trackLength = trackLength;
@@ -24,6 +26,10 @@ public class Circuit {
         this.lapRecord = lapRecord;
         this.overtakeZones = overtakeZones;
         this.curves = curves;
+        Weather[] weathers = Weather.values();
+        Random random = new Random();
+        this.weather = weathers[random.nextInt(weathers.length)];
+
     }
 
     public String getName() {
@@ -88,5 +94,13 @@ public class Circuit {
 
     public void setCurves(int curves) {
         this.curves = curves;
+    }
+
+    public Weather getWeather() {
+        return weather;
+    }
+
+    public void setWeather(Weather weather) {
+        this.weather = weather;
     }
 }

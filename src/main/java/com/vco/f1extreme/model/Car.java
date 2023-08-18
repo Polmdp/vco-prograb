@@ -101,7 +101,24 @@ public class Car {
     //metodos............
     public static int stop(){
         //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 5).
-        return 0;//no devuelve nada por ahora
+        int brakeScore = 3;
+        switch (circuit.getWeather()) {
+            case SOLEADO:
+                brakeScore += 10; // Buenas condiciones
+                break;
+            case NUBLADO:
+                // Condiciones normales
+                break;
+            case LLUVIOSO:
+                brakeScore -= 20; // Condiciones dificiles
+                break;
+            case NIEBLA:
+                brakeScore -= 10; // Visibilidad reducida
+        }
+        brakeScore = Math.max(1, Math.min(brakeScore, 100));
+
+        return brakeScore;
+
     }
     public static int start(){
         //este metodo va ser para ver como acelerar el auto al arrancar la carrera(1 al 5).
