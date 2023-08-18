@@ -102,7 +102,7 @@ public class Car {
     public static int stop(){
         //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 5).
         int brakeScore = 50;
-        switch (circuit.getWeather()) {
+        switch (Weather.NUBLADO) {
             case SOLEADO:
                 brakeScore += 10; // Buenas condiciones
                 break;
