@@ -3,7 +3,10 @@ package main.java.com.vco.f1extreme.model;
 import java.util.Random;
 
 public class Circuit {
-
+    public enum typecurve{
+        1,//open
+        2;//close
+    }
 
     private String name;
     private String country;
@@ -12,7 +15,7 @@ public class Circuit {
     private String infographic;
     private String lapRecord;
     private int overtakeZones;
-    private int curves;
+    private List<typecurve> curves;
 
     private Weather weather;
 
