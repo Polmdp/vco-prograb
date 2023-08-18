@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataInitializer {
+
+
+
     public static List<Pilot> getDefaultPilots()
     {
         List<Pilot>pilots=new ArrayList<>();

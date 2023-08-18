@@ -2,6 +2,7 @@ package main.java.com.vco.f1extreme.model;
 
 public class Circuit {
 
+
     private String name;
     private String country;
     private int trackLength;
@@ -10,6 +11,8 @@ public class Circuit {
     private String lapRecord;
     private int overtakeZones;
     private int curves;
+
+    private Clima clima;
 
 
     public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, int curves) {

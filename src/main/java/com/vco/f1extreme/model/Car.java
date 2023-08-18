@@ -131,7 +131,7 @@ public class Car {
                 throw new IllegalArgumentException("Curve not valid...");
         }
 
-        return calculateWeightEffect(this.weight) * simulateAcceleration() * stop() * stopMultiplier;
+        return Math.round(calculateWeightEffect(this.weight) * this.acceleration * stop() * stopMultiplier) ;
         //
         //tener en cuenta del auto :aceleracion,peso,frenos .
         //tener en cuenta del circuito: tipo de curva?.
