@@ -148,7 +148,11 @@ public class Car {
     }
 
 
-    public static int perfoverruns(){
+    public static int perfoverruns(float weight,float acceleration,float maxspeed){
+
+        int perfruns=0;
+        perfruns=(1000/weight)*(acceleration*4)*(maxspeed*3);
+        return perfruns;
         //tener en cuenta del auto :aceleracion,peso,velmax .
         //tener en cuenta del piloto:nada ya que depende solo del auto.
         //tener en cuenta del circuito: longitud de zona de sobrepaso.
@@ -158,6 +162,8 @@ public class Car {
         return 0;//no devuelve nada por ahora
     }
     public static int reliability(){
+        int reliabilitycar=0;
+
         //Determina qué tan confiable es el auto: A menor valor de este
         //atributo, mayores probabilidades de que vaya a abandonar
         //durante la carrera por desperfectos mecánicos
