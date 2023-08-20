@@ -7,20 +7,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.util.List;
 
 
 
 
 public class PilotSelectionFrame extends JFrame {
+    private final List<Circuit> availableCircuits;
+    private final GameSession gameSession;
+
+
     imagenfondo fondo=new imagenfondo();
     private JPanel cardPanel;
     private CardLayout cardLayout;
 
-    public PilotSelectionFrame(List<Pilot> availablePilots, List<Car> availableCars) {
-        setTitle("Selecciona un Piloto Broder");
+
+    public PilotSelectionFrame(List<Pilot> availablePilots, List<Car> availableCars, List<Circuit> availableCircuits, GameSession gameSession) {
+        this.availableCircuits = availableCircuits;
+        this.gameSession = gameSession;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
         cardLayout = new CardLayout();
@@ -32,10 +36,9 @@ public class PilotSelectionFrame extends JFrame {
 
         JPanel carSelectionPanel = createCarSelectionPanel(availableCars);
         cardPanel.add(carSelectionPanel, "CarSelection");
-
         add(cardPanel);
-
         cardLayout.show(cardPanel, "PilotSelection");
+
     }
 
     private JPanel createPilotSelectionPanel(List<Pilot> availablePilots) {
@@ -124,7 +127,7 @@ public class PilotSelectionFrame extends JFrame {
 
 
     private void handlePilotSelection(Pilot selectedPilot) {
-
+        gameSession.setSelectedPilot(selectedPilot);
         System.out.println("Selected Pilot: " + selectedPilot.toString());
 
         cardLayout.show(cardPanel, "CarSelection"); // Cambiar al panel de selección de autos
@@ -132,8 +135,15 @@ public class PilotSelectionFrame extends JFrame {
 
     private void handleCarSelection(Car selectedCar) {
         //car selection
+        gameSession.setSelectedCar(selectedCar);
         System.out.println("Selected Car: " + selectedCar.toString());
+        TrackSelectionFrame trackSelectionFrame = new TrackSelectionFrame(availableCircuits, gameSession);
+        trackSelectionFrame.setVisible(true);
+
     }
+
+
+
     class imagenfondo extends JPanel{
         private Image imagen;
 

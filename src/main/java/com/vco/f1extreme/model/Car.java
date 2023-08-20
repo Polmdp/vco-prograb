@@ -134,16 +134,10 @@ public class Car {
 //    }
 
     public int perfcurves(){
-        int perfcurves;
-        int stopMultiplier;
 
-        return Math.round(calculateWeightEffect(this.weight) * this.acceleration * stop() ) ;
-        //
-        //tener en cuenta del auto :aceleracion,peso,frenos .
-        //tener en cuenta del circuito: tipo de curva?.
-        //tener en cuenta el tipo de neumatico del momento.
-        ////Determina cómo es el comportamiento del auto en las curvas
-        //no devuelve nada por ahora
+        float result = (calculateWeightEffect(this.weight) * this.acceleration * stop()) / 20000.0f * 100;
+        return Math.round(Math.max(1, Math.min(result, 100)));
+
 
     }
 
