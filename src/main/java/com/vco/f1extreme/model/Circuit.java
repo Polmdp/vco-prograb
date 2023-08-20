@@ -1,5 +1,7 @@
 package main.java.com.vco.f1extreme.model;
 
+import javax.swing.*;
+import java.net.URL;
 import java.util.List;
 import java.util.Random;
 
@@ -19,6 +21,7 @@ public class Circuit {
 
     private List<typecurve> curves;
     private Weather weather;
+    private ImageIcon imageIcon;
 
 
     public Circuit(String name, String country, int trackLength, int numberOfLaps, String infographic, String lapRecord, int overtakeZones, List<typecurve> curves, Weather weather) {
@@ -33,6 +36,14 @@ public class Circuit {
         Weather[] weathers = Weather.values();
         Random random = new Random();
         this.weather = weathers[random.nextInt(weathers.length)];
+
+        URL imageUrl = getClass().getClassLoader().getResource("main/resources/img/track/" + name + ".png");
+        if (imageUrl != null) {
+            this.imageIcon = new ImageIcon(imageUrl);
+        } else {
+            System.err.println("Couldn't find file: " + name + ".png");
+        }
+
 
     }
 
@@ -107,4 +118,9 @@ public class Circuit {
     public void setWeather(Weather weather) {
         this.weather = weather;
     }
+
+    public ImageIcon getImageIcon() {
+        return imageIcon;
+    }
+
 }
