@@ -50,12 +50,14 @@ public class Pilot  {
         return 0;//va a devolver la eficacia (como un porcentaje) de veces que no permitio q se le adelanten
     }
 
-    public static int classification()
+    public static int classification(int puntajes[],int posittion,int player,int cantplayers)
     {
+        puntajes[player]+=(cantplayers+1-posittion)*10;
+
         //se tendra en cuenta los tiempos de las carreras anterior,
         // medidante el paso de la carrera va a aumentar el rendimiento para que pueda
         // obtener una mrjor posicion en el inicio de la carrera
-        return 0;//aca va a devolver un puntaje
+        return puntajes[player];//aca va a devolver un puntaje
     }
 
     public static int tirecare()
@@ -63,10 +65,17 @@ public class Pilot  {
         //se va a tener en cuenta el neumatico elegido por el player,
         return 0;
     }
-    public static int start()
+    public static int start(int cantplayers,int player,int players[])
     {
+        int startrace=1;
+        for(int i=0;i<cantplayers;i++)
+        {
+            if (players[i]<players[player])
+                startrace++;
 
-        return 0; //puntaje q servira para la primera vuelta del corredor
+        }
+
+        return startrace; //puntaje q servira para la primera vuelta del corredor
     }
 
 
