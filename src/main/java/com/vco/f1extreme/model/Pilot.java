@@ -65,17 +65,10 @@ public class Pilot  {
         //se va a tener en cuenta el neumatico elegido por el player,
         return 0;
     }
-    public static int start(int cantplayers,int player,int players[])
+    public static int start(int racesRun,int racesWon,int championshipsPlayed,int championshipsWon)
     {
-        int startrace=1;
-        for(int i=0;i<cantplayers;i++)
-        {
-            if (players[i]<players[player])
-                startrace++;
-
-        }
-
-        return startrace; //puntaje q servira para la primera vuelta del corredor
+        float startfirstround=(racesWon/racesRun)*100+(championshipsWon/championshipsPlayed)*100;
+        return (int)startfirstround; //puntaje q servira para la primera vuelta del corredor
     }
 
 
