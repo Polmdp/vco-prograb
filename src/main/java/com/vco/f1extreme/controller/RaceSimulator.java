@@ -4,6 +4,7 @@ import main.java.com.vco.f1extreme.model.Car;
 import main.java.com.vco.f1extreme.model.Circuit;
 import main.java.com.vco.f1extreme.model.Pilot;
 import main.java.com.vco.f1extreme.model.GameSession;
+import java.time.Duration;
 
 public class RaceSimulator implements Runnable {
 
@@ -15,7 +16,7 @@ public class RaceSimulator implements Runnable {
 
     private boolean needsPitStop() {
         // necesita un pit stop en esta vuelta.
-        return Math.random() < 0.1;  // Por ejemplo, un 10% de probabilidad.
+        return Math.random() < 0.2;  // Por ejemplo, un 20% de probabilidad.
     }
 
     private float pitStopTime() {
@@ -26,7 +27,7 @@ public class RaceSimulator implements Runnable {
 
     @Override
     public void run() {
-
+        //esto es temporal, hay que hacerlo bien.
         while (gameSession.getSelectedCircuit() == null || gameSession.getSelectedCar() == null || gameSession.getSelectedPilot() == null) {
             try {
                 Thread.sleep(1000);  // espera 1 segundo antes de volver a verificar
@@ -39,11 +40,32 @@ public class RaceSimulator implements Runnable {
         Car pilotCar = gameSession.getSelectedCar();
         Pilot pilot = gameSession.getSelectedPilot();
 
+        float pilotCarSpeedInMetersPerSecond = pilotCar.getMaxSpeed() * 1000.0f / 3600.0f; // Convert km/h to m/s
+        long averageLapTimeInSeconds = Math.round(circuit.getTrackLength() / pilotCarSpeedInMetersPerSecond);
+
+
+        Duration duration = Duration.ofSeconds(averageLapTimeInSeconds);
+        long minutes = duration.toMinutes();
+        long seconds = duration.minusMinutes(minutes).getSeconds();
+
+        Duration totalDuration = Duration.ZERO;
+
+
+
+
 
         for (int lap = 1; lap <= circuit.getNumberOfLaps(); lap++) { // Comenzamos desde lap = 1 para una representación más intuitiva
             if (needsPitStop()) {
                 // sumar tiempo a la vuelta
+                System.out.println("Uso Pit + 15 segundos");
+                totalDuration = totalDuration.plusSeconds(15);
+
+
             }
+
+
+
+            totalDuration = totalDuration.plusSeconds(averageLapTimeInSeconds);
 
 
             System.out.println("Vuelta Nº: " + lap);
@@ -53,5 +75,15 @@ public class RaceSimulator implements Runnable {
 
 
         }
+        System.out.println("Piloto: " + pilot.getPilotName());
+        System.out.println("Auto: " + pilotCar.getBrand());
+        System.out.println("---------");
+        long totalHours = totalDuration.toHours();
+        long totalMinutes = totalDuration.minusHours(totalHours).toMinutes();
+        long totalSeconds = totalDuration.minusHours(totalHours).minusMinutes(totalMinutes).getSeconds();
+
+        System.out.println("Tiempo Total Estimado: " + totalHours + " horas " + totalMinutes + " minutos " + totalSeconds + " segundos");
+
+
     }
 }
