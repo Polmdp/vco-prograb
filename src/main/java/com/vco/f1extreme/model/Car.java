@@ -120,9 +120,11 @@ public class Car {
         return brakeScore;
 
     }
-    public static int start(){
-        //este metodo va ser para ver como acelerar el auto al arrancar la carrera(1 al 5).
-        return 0;//no devuelve nada por ahora
+    public static int start(float weight,float acceleration){
+        float startcar=0;
+        startcar=(10000/weight)*(acceleration*3);
+        return (int)startcar;
+        //este metodo va ser para ver como acelerar el auto al arrancar la carrera(1 al 100)
     }
     //valores entre 1 y 100, a mayor valor, mejor desempeño
 
@@ -144,16 +146,16 @@ public class Car {
 
     public static int perfoverruns(float weight,float acceleration,float maxspeed){
 
-        int perfruns=0;
+        float perfruns=0;
         perfruns=(1000/weight)*(acceleration*4)*(maxspeed*3);
-        return perfruns;
+        return (int)perfruns;
         //tener en cuenta del auto :aceleracion,peso,velmax .
         //tener en cuenta del piloto:nada ya que depende solo del auto.
         //tener en cuenta del circuito: longitud de zona de sobrepaso.
         //tener en cuenta el tipo de neumatico del momento.
         //Determina cómo se desempeña el auto en aceleraciones rápidas
         //y/o rectas prolongadas para sobrepasar a otros autos.
-        return 0;//no devuelve nada por ahora
+        // no devuelve nada por ahora
     }
     public static int reliability(){
         int reliabilitycar=0;
