@@ -39,7 +39,7 @@ public class DataInitializer {
     public static List<Circuit> getDefaultCircuits() {
         List<Circuit> circuits = new ArrayList<>();
         List<Circuit.typecurve> monacoCurves = Arrays.asList(Circuit.typecurve.OPEN, Circuit.typecurve.CLOSE);
-        circuits.add(new Circuit("Monaco", "Monaco", 3300, 10, "infographicURL1", "1:14.260", 3, monacoCurves, Weather.NUBLADO));
+        circuits.add(new Circuit("Monaco", "Monaco", 3300, 70, "infographicURL1", "1:14.260", 3, monacoCurves, Weather.NUBLADO));
 
 
         return circuits;

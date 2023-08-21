@@ -40,7 +40,7 @@ public class RaceSimulator implements Runnable {
         Car pilotCar = gameSession.getSelectedCar();
         Pilot pilot = gameSession.getSelectedPilot();
 
-        float consumption = pilotCar.fuelConsumptionPerLap(circuit.getTrackLength());
+        float remainingFuel = pilotCar.getFuelcapacity(); // Al inicio, el tanque lleno
 
         float pilotCarSpeedInMetersPerSecond = pilotCar.getMaxSpeed() * 1000.0f / 3600.0f; // Convert km/h to m/s
         long averageLapTimeInSeconds = Math.round(circuit.getTrackLength() / pilotCarSpeedInMetersPerSecond);
@@ -61,6 +61,7 @@ public class RaceSimulator implements Runnable {
                 // sumar tiempo a la vuelta
                 System.out.println("Uso Pit + 15 segundos");
                 totalDuration = totalDuration.plusSeconds(15);
+                remainingFuel = pilotCar.getFuelcapacity();
 
 
             }
@@ -74,6 +75,10 @@ public class RaceSimulator implements Runnable {
             System.out.println("Piloto: " + pilot.getPilotName());
             System.out.println("Auto: " + pilotCar.getBrand());
             System.out.println("---------");
+            float fuelConsumedThisLap = pilotCar.FuelConsumptionPerLap(circuit.getTrackLength());
+            remainingFuel -= fuelConsumedThisLap;
+
+            System.out.println("Combustible restante después de la vuelta " + lap + ": " + remainingFuel + " litros");
 
 
         }

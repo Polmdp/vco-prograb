@@ -13,6 +13,7 @@ public class Car {
     private float maxspeed;
     private float acceleration;
     private float fuelconsumption;
+
     private float fuelcapacity;
     private static Circuit circuit;
 
@@ -100,6 +101,14 @@ public class Car {
         this.fuelconsumption = fuelconsumption;
     }
 
+    public float getFuelcapacity() {
+        return fuelcapacity;
+    }
+
+    public void setFuelcapacity(float fuelcapacity) {
+        this.fuelcapacity = fuelcapacity;
+    }
+
     //metodos............
     public static int stop(Weather weather){
         //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 5).
@@ -159,13 +168,13 @@ public class Car {
         //durante la carrera por desperfectos mecánicos
         return 0;//no devuelve nada por ahora
     }
-    public float fuelConsumptionPerLap(int trackLength) {
+    public float FuelConsumptionPerLap(float trackLength) {
+        float baseConsumption = 2.5f;
+        float weightFactor = (this.weight - 600) / 1000;
+        float speedFactor = (this.maxspeed - 300) / 300;
 
-        float weightFactor = this.weight / 1000;  //  peso  en kg.
-        float speedFactor = this.maxspeed / 100;  //  velocidad esté en km/h.
-        float baseConsumption = this.fuelconsumption;
-        float consumptionPerLap = trackLength * (baseConsumption + weightFactor + speedFactor);
-        return consumptionPerLap / 1000;  // Devuelve el consumo en litros por vuelta.
+        float consumptionPerKm = baseConsumption + weightFactor + speedFactor;
+        return (trackLength / 1000) * consumptionPerKm;
     }
 
     public int calculateWeightEffect(float weight) {
