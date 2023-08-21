@@ -28,29 +28,7 @@ public class PlayerSelection {
         return pilots.get(choice - 1);
     }
 
-    public Player addPlayerWithSelection() {
-        Scanner scanner = new Scanner(System.in);
 
-        // allow user to put Name and Color
-        System.out.println("Player Name:");
-        String name = scanner.nextLine();
-        System.out.println("Insert Color:");
-        String color = scanner.nextLine();
-
-        // Pilot Selection
-        Pilot selectedPilot = selectPilot();
-
-        // here we are creating the player with previous data
-        //
-        // here we have to create the logic to select cars
-        Car car = new Car("Red", 2, "Ford", 102, 80, 1, 1);
-        Player newPlayer = new Player(name, color, selectedPilot, car);
-
-        // add player to list
-        addPlayer(newPlayer);
-
-        return newPlayer;
-    }
 
     public void addPlayer(Player player) {
         players.add(player);
