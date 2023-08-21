@@ -65,6 +65,9 @@ public class RaceSimulator implements Runnable {
 
 
             }
+            if (remainingFuel < pilotCar.FuelConsumptionPerLap(circuit.getTrackLength())){
+                System.out.println("SE QUEDO SIN NAFTA !!");
+            }
 
 
 
