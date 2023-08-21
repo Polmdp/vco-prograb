@@ -40,6 +40,8 @@ public class RaceSimulator implements Runnable {
         Car pilotCar = gameSession.getSelectedCar();
         Pilot pilot = gameSession.getSelectedPilot();
 
+        float consumption = pilotCar.fuelConsumptionPerLap(circuit.getTrackLength());
+
         float pilotCarSpeedInMetersPerSecond = pilotCar.getMaxSpeed() * 1000.0f / 3600.0f; // Convert km/h to m/s
         long averageLapTimeInSeconds = Math.round(circuit.getTrackLength() / pilotCarSpeedInMetersPerSecond);
 

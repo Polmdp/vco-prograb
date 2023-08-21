@@ -28,9 +28,9 @@ public class DataInitializer {
     public static List<Car> getDefaultCars() {
         List<Car> cars = new ArrayList<>();
 
-        cars.add(new Car("Red", 1, "Ferrari", 750, 350, 2.5f, 12.5f));
-        cars.add(new Car("Silver", 44, "Mercho", 800, 345, 2.4f, 11.8f));
-        cars.add(new Car("Orange", 33, "McLaren", 720, 335, 2.6f, 12.2f));
+        cars.add(new Car("Red", 1, "Ferrari", 750, 350, 2.5f, 12.5f, 115.2f));
+        cars.add(new Car("Silver", 44, "Mercho", 800, 345, 2.4f, 11.8f,110.2f));
+        cars.add(new Car("Orange", 33, "McLaren", 720, 335, 2.6f, 12.2f,113.2f));
         // Agrega más escuderías y sus detalles aquí...
 
         return cars;

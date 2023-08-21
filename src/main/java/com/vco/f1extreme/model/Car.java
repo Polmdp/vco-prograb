@@ -13,6 +13,7 @@ public class Car {
     private float maxspeed;
     private float acceleration;
     private float fuelconsumption;
+    private float fuelcapacity;
     private static Circuit circuit;
 
     public ImageIcon getImageIcon() {
@@ -25,7 +26,7 @@ public class Car {
 
     private ImageIcon imageIcon;
 
-    public Car(String color, int number, String brand, float weight, float maxspeed, float acceleration, float fuelconsumption) {
+    public Car(String color, int number, String brand, float weight, float maxspeed, float acceleration, float fuelconsumption, float fuelcapacity) {
         this.color = color;
         this.number = number;
         this.brand = brand;
@@ -33,6 +34,7 @@ public class Car {
         this.maxspeed = maxspeed;
         this.acceleration = acceleration;
         this.fuelconsumption = fuelconsumption;
+        this.fuelcapacity = fuelcapacity;
         URL imageUrl = getClass().getClassLoader().getResource("main/resources/img/avatar/" + brand + ".png");
         if (imageUrl != null) {
             this.imageIcon = new ImageIcon(imageUrl);
