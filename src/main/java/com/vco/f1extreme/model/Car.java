@@ -99,10 +99,10 @@ public class Car {
     }
 
     //metodos............
-    public static int stop(){
+    public static int stop(Weather weather){
         //este metodo va a ser para ver como reaccionan los frenos(puntaje del 1 al 5).
         int brakeScore = 50;
-        switch (Weather.NUBLADO) {
+        switch (weather) {
             case SOLEADO:
                 brakeScore += 10; // Buenas condiciones
                 break;
@@ -133,9 +133,9 @@ public class Car {
 //        return accelerationsim;
 //    }
 
-    public int perfcurves(){
+    public int perfcurves(Weather weather){
 
-        float result = (calculateWeightEffect(this.weight) * this.acceleration * stop()) / 20000.0f * 100;
+        float result = (calculateWeightEffect(this.weight) * this.acceleration * stop(weather)) / 20000.0f * 100;
         return Math.round(Math.max(1, Math.min(result, 100)));
 
 
@@ -157,11 +157,13 @@ public class Car {
         //durante la carrera por desperfectos mecánicos
         return 0;//no devuelve nada por ahora
     }
-    public static float FuelConsumptionPerLap(float weight, int trackLength,int fuelconsumption,int maxspeed){
-        float compustionperlap=0;
-        compustionperlap=(((trackLength*fuelconsumption)/100)*4)+(weight*3)+(maxspeed*2);
-        //add some variation for the type of tire
-        return compustionperlap/250;
+    public float fuelConsumptionPerLap(int trackLength) {
+
+        float weightFactor = this.weight / 1000;  //  peso  en kg.
+        float speedFactor = this.maxspeed / 100;  //  velocidad esté en km/h.
+        float baseConsumption = this.fuelconsumption;
+        float consumptionPerLap = trackLength * (baseConsumption + weightFactor + speedFactor);
+        return consumptionPerLap / 1000;  // Devuelve el consumo en litros por vuelta.
     }
 
     public int calculateWeightEffect(float weight) {
