@@ -60,10 +60,14 @@ public class Pilot  {
         return puntajes[player];//aca va a devolver un puntaje
     }
 
-    public static int tirecare()
+    public static int tirecare(int racesRun,int racesWon,int championshipsPlayed,int championshipsWon,int numberPolePositions)
     {
-        //se va a tener en cuenta el neumatico elegido por el player,
-        return 0;
+        float tirecarepilot=0;
+        float maxvalue= (racesRun+1/racesRun)*(championshipsPlayed+1/championshipsPlayed);
+        float minvalue=(1/racesRun)*(1/championshipsPlayed);
+        tirecarepilot=(numberPolePositions+1/racesRun)*(championshipsWon+1/championshipsPlayed);
+        tirecarepilot=(tirecarepilot-minvalue)/(maxvalue-minvalue)*100;
+        return (int)tirecarepilot;
     }
     public static int start(int racesRun,int racesWon,int championshipsPlayed,int championshipsWon)
     {
